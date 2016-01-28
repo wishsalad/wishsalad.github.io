@@ -8,10 +8,17 @@ function resize(e) {
   var w = 450;
   var h = 260;
 
-  var scalex = (window.innerWidth - 50) / w;
-  var scaley = (window.innerHeight - 50) / h;
+  var wW = window.innerWidth;
+  var wH = window.innerHeight;
+
+  var scalex = (wW - 50) / w;
+  var scaley = (wH - 50) / h;
   var scale = Math.min(scalex, scaley);
-  document.getElementById("container").style.transform = "scale(" + scale + ")";
+  var style =   document.getElementById("container").style;
+  style.transform = "scale(" + scale + ")";
+  style.width = w + "px";
+  style.height = h + "px";
+  style.margin = (wH - h*scale)/2 + "px 0 0 " + (wW - w*scale)/2 + "px";
 }
 window.onresize = resize;
 resize();
