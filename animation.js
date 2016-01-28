@@ -4,13 +4,17 @@ var s = Snap("#svg");
 Snap.load("logo.svg", onSVGLoaded) ;
 
 // Scale Fullscreen
-var w = 450;
-var h = 260;
+function resize(e) {
+  var w = 450;
+  var h = 260;
 
-var scalex = (window.innerWidth - 50) / w;
-var scaley = (window.innerHeight - 50) / h;
-var scale = Math.min(scalex, scaley);
-document.getElementById("container").style.transform = "scale(" + scale + ")";
+  var scalex = (window.innerWidth - 50) / w;
+  var scaley = (window.innerHeight - 50) / h;
+  var scale = Math.min(scalex, scaley);
+  document.getElementById("container").style.transform = "scale(" + scale + ")";
+}
+window.onresize = resize;
+resize();
 
 function onSVGLoaded( data ){
     s.append(data);
@@ -42,6 +46,7 @@ function onSVGLoaded( data ){
     var start = 600;
 
     var i = 0;
+    welems.reverse();
     welems.forEach(function(e) {
       setTimeout(function(){
           e.animate({opacity: 1, transform: 'S1 r0 t0,0'}, 800, mina.bounce);
