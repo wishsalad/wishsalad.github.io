@@ -43,6 +43,7 @@ function onSVGLoaded( data ){
        var we = Snap("#w" + (i+1));
        welems[i] = we;
     }
+    welems.reverse();
 
     var timers = [];
 
@@ -81,7 +82,6 @@ function onSVGLoaded( data ){
       var start = 600;
 
       var i = 0;
-      welems.reverse();
       welems.forEach(function(e) {
         timers.push(setTimeout(function(){
             e.animate({opacity: 1, transform: 'S1 r0 t0,0'}, 800, mina.bounce);
