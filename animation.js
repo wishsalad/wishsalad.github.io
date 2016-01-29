@@ -28,60 +28,100 @@ function onSVGLoaded( data ){
 
     var w = Snap("#w");
     var wt = w.transform();
-    w.addTransform("t150,0")
 
     var ws = Snap("#ws");
-    ws.attr({opacity: 0});
     var wst = ws.transform();
-    ws.addTransform("t50,0");
 
     var motto1 = Snap("#motto1");
-    motto1.attr({opacity: 0});
     var motto1t = motto1.transform();
-    motto1.addTransform("S0.99 t0,5");
 
     var motto2 = Snap("#motto2");
-    motto2.attr({opacity: 0});
     var motto2t = motto2.transform();
-    motto2.addTransform("S0.99 t0,5");
 
     welems = [];
     for(var i = 0; i < 12; i++) {
        var we = Snap("#w" + (i+1));
-       var angle = Math.floor(Math.random() * 180) - 90;
-       var scale = Math.random() * 3
-       var t = "S" + scale + " r" + angle + "t0,-50"
-       we.attr({opacity: 0, transform: t});
        welems[i] = we;
     }
 
-    var start = 600;
+    var timers = [];
 
-    var i = 0;
-    welems.reverse();
-    welems.forEach(function(e) {
-      setTimeout(function(){
-          e.animate({opacity: 1, transform: 'S1 r0 t0,0'}, 800, mina.bounce);
-      }, 60 * i + start);
-      i++;
+    function reset() {
+      timers.forEach(function(t){ clearTimeout(t); });
+
+      welems.forEach(function(e) {
+        e.stop();
+        var angle = Math.floor(Math.random() * 180) - 90;
+        var scale = Math.random() * 3
+        var t = "S" + scale + " r" + angle + "t0,-50"
+        e.attr({opacity: 0, transform: t});
+      });
+
+      w.stop();
+      w.transform(wt);
+      w.addTransform("t150,0");
+
+      w.stop();
+      ws.attr({opacity: 0});
+      ws.transform(wst);
+      ws.addTransform("t50,0");
+
+      motto1.stop();
+      motto1.attr({opacity: 0});
+      motto1.transform(motto1t.localMatrix);
+      motto1.addTransform("S0.99 t0,5");
+
+      motto2.stop();
+      motto2.attr({opacity: 0});
+      motto2.transform(motto2t.localMatrix);
+      motto2.addTransform("S0.99 t0,5");
+    }
+
+    function animate() {
+      var start = 600;
+
+      var i = 0;
+      welems.reverse();
+      welems.forEach(function(e) {
+        timers.push(setTimeout(function(){
+            e.animate({opacity: 1, transform: 'S1 r0 t0,0'}, 800, mina.bounce);
+        }, 60 * i + start));
+        i++;
+      });
+
+      timers.push(setTimeout(function(){
+          motto1.animate({opacity: 1, transform: motto1t}, 1300, mina.backout);
+      }, 1500 + start));
+
+      timers.push(setTimeout(function(){
+          motto2.animate({opacity: 1, transform: motto2t}, 1300, mina.backout);
+      }, 2500 + start));
+
+
+      timers.push(setTimeout(function(){
+          w.animate({transform: wt}, 350, mina.easeinout);
+      }, 3500 + start));
+
+      timers.push(setTimeout(function(){
+          ws.animate({opacity: 1, transform: wst}, 600, mina.backout);
+      }, 3850 + start));
+    }
+
+    reset();
+    animate();
+
+    ifvisible.on("blur", function(){
+      reset();
     });
 
-    setTimeout(function(){
-        motto1.animate({opacity: 1, transform: motto1t}, 1300, mina.backout);
-    }, 1500 + start);
+    ifvisible.on("focus", function(){
+      animate();
+    });
 
-    setTimeout(function(){
-        motto2.animate({opacity: 1, transform: motto2t}, 1300, mina.backout);
-    }, 2500 + start);
-
-
-    setTimeout(function(){
-        w.animate({transform: wt}, 350, mina.easeinout);
-    }, 3500 + start);
-
-    setTimeout(function(){
-        ws.animate({opacity: 1, transform: wst}, 600, mina.backout);
-    }, 3850 + start);
+    s.click(function(){
+      reset();
+      animate();
+    });
 }
 
 }
