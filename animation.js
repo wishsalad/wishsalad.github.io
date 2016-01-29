@@ -35,10 +35,15 @@ function onSVGLoaded( data ){
     var wst = ws.transform();
     ws.addTransform("t50,0");
 
-    var motto = Snap("#motto");
-    motto.attr({opacity: 0});
-    var mottot = motto.transform();
-    motto.addTransform("S0.99 t0,5");
+    var motto1 = Snap("#motto1");
+    motto1.attr({opacity: 0});
+    var motto1t = motto1.transform();
+    motto1.addTransform("S0.99 t0,5");
+
+    var motto2 = Snap("#motto2");
+    motto2.attr({opacity: 0});
+    var motto2t = motto2.transform();
+    motto2.addTransform("S0.99 t0,5");
 
     welems = [];
     for(var i = 0; i < 12; i++) {
@@ -62,16 +67,21 @@ function onSVGLoaded( data ){
     });
 
     setTimeout(function(){
+        motto1.animate({opacity: 1, transform: motto1t}, 1300, mina.backout);
+    }, 1500 + start);
+
+    setTimeout(function(){
+        motto2.animate({opacity: 1, transform: motto2t}, 1300, mina.backout);
+    }, 2500 + start);
+
+
+    setTimeout(function(){
         w.animate({transform: wt}, 350, mina.easeinout);
-    }, 1400 + start);
+    }, 3500 + start);
 
     setTimeout(function(){
         ws.animate({opacity: 1, transform: wst}, 600, mina.backout);
-    }, 1750 + start);
-
-    setTimeout(function(){
-        motto.animate({opacity: 1, transform: mottot}, 1300, mina.backout);
-    }, 1850 + start);
+    }, 3850 + start);
 }
 
 }
