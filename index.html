@@ -8,11 +8,53 @@
 
   <script type="text/javascript" src="snap.svg.js"></script>
   <script type="text/javascript" src="ifvisible.js"></script>
+  <script type="text/javascript" src="smooth-scroll.js"></script>
   <script type="text/javascript" src="animation.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      background-color: white;
+    }
+
+    #header {
+      width: 100%;
+      height: 5%;
+      background-color: white;
+      border-bottom: 1px solid #eee;
+      position: fixed;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      z-index: 1;
+    }
+
+    #content {
+      margin: auto;
+      max-width: 950px;
+      background-color: white;
+    }
+
+    #main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #logoSmall {
+      height: 100%;
+      margin-left: 10px;
+    }
+  </style>
 </head>
-<body style="margin: 0px">
-  <div id="container" style="transform-origin: left top;">
-    <svg id="svg" width="450" height="260"></svg>
+<body>
+  <div id="header">
+    <img id="logoSmall" src="logo_small.svg"/>
+  </div>
+  <div id="content">
+    <div id="main">
+      <svg id="svg"></svg>
+    </div>
+    <img id="firstSection" src="demo_content.svg" width="100%"/>
   </div>
 </body>
 </html>

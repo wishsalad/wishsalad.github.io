@@ -1,30 +1,34 @@
 window.onload = function() {
 
-var s = Snap("#svg");
+var parentSvg = Snap("#svg");
 Snap.load("logo.svg", onSVGLoaded) ;
 
-// Scale Fullscreen
-function resize(e) {
-  var w = 450;
-  var h = 260;
-
-  var wW = window.innerWidth;
-  var wH = window.innerHeight;
-
-  var scalex = (wW - 50) / w;
-  var scaley = (wH - 50) / h;
-  var scale = Math.min(scalex, scaley);
-  var style =   document.getElementById("container").style;
-  style.transform = "scale(" + scale + ")";
-  style.width = w + "px";
-  style.height = h + "px";
-  style.margin = (wH - h*scale)/2 + "px 0 0 " + (wW - w*scale)/2 + "px";
-}
-window.onresize = resize;
-resize();
-
 function onSVGLoaded( data ){
-    s.append(data);
+    var svg = Snap(data.select('svg'));
+    parentSvg.append(svg);
+
+    var width = svg.attr("width");
+    var height = svg.attr("height");
+
+    function resize(e) {
+      var wW = window.innerWidth;
+      var wH = window.innerHeight;
+
+      var scalex = (wW - 50) / width;
+      var scaley = (wH - 50) / height;
+      var scale = Math.min(Math.min(scalex, scaley), 2);
+
+      var wsize = width*scale + "px";
+      var hsize = height*scale + "px";;
+
+      parentSvg.attr({width: wsize});
+      parentSvg.attr({height: hsize});
+
+      svg.attr({width: wsize});
+      svg.attr({height: hsize});
+    }
+    window.onresize = resize;
+    resize();
 
     var w = Snap("#w");
     var wt = w.transform();
@@ -38,6 +42,9 @@ function onSVGLoaded( data ){
     var motto2 = Snap("#motto2");
     var motto2t = motto2.transform();
 
+    var scrollSign = Snap("#scrollSign");
+    var scrollSignt = scrollSign.transform();
+
     welems = [];
     for(var i = 0; i < 12; i++) {
        var we = Snap("#w" + (i+1));
@@ -46,6 +53,8 @@ function onSVGLoaded( data ){
     welems.reverse();
 
     var timers = [];
+
+    var header = document.getElementById("header")
 
     function reset() {
       timers.forEach(function(t){ clearTimeout(t); });
@@ -76,6 +85,12 @@ function onSVGLoaded( data ){
       motto2.attr({opacity: 0});
       motto2.transform(motto2t.localMatrix);
       motto2.addTransform("S0.99 t0,5");
+
+      scrollSign.stop();
+      scrollSign.transform(scrollSignt.localMatrix);
+      scrollSign.attr({opacity: 0});
+
+      header.style.opacity = 0;
     }
 
     function animate() {
@@ -105,6 +120,22 @@ function onSVGLoaded( data ){
       timers.push(setTimeout(function(){
           ws.animate({opacity: 1, transform: wst}, 600, mina.backout);
       }, 3850 + start));
+
+      function animateScrollSign(){
+          var t = scrollSignt.localMatrix.translate(0, 2);
+          scrollSign.animate({opacity: 1, transform: t}, 800, mina.backout, animateScrollSignReverse);
+      }
+
+      function animateScrollSignReverse(){
+          var t = scrollSignt.localMatrix.translate(0, -2);
+          scrollSign.animate({opacity: 1, transform: t}, 200, mina.backout, animateScrollSign);
+      }
+
+      timers.push(setTimeout(animateScrollSign, 5000 + start));
+
+      timers.push(setTimeout(function(){
+          header.style.opacity = 1;
+      }, 5000 + start));
     }
 
     reset();
@@ -118,9 +149,21 @@ function onSVGLoaded( data ){
       animate();
     });
 
-    s.click(function(){
+    w.click(function(){
       reset();
       animate();
+    });
+
+    smoothScroll.init({
+        selector: '[data-scroll]', // Selector for links (must be a valid CSS selector)
+        selectorHeader: '#header', // Selector for fixed headers (must be a valid CSS selector)
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        scrollOnLoad: true // Boolean. If true, animate to anchor on page load if URL has a hash
+    });
+
+    scrollSign.click(function(){
+      smoothScroll.animateScroll('#firstSection')
     });
 }
 

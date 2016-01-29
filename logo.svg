@@ -7,17 +7,29 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="450"
-   height="260"
-   viewBox="0 0 450 260"
+   height="300"
+   viewBox="0 0 450 300"
    id="svg163537"
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="logo.svg">
   <defs
-     id="defs163539" />
+     id="defs163539">
+    <symbol
+       id="angle-double-down"
+       class="Directional-Icons">
+      <title
+         id="title34404">Angle Double Down</title>
+      <path
+         transform="matrix(0.05,0,0,-0.05,0,76.8)"
+         d="M1075 672q0 -13 -10 -23l-466 -466q-10 -10 -23 -10t-23 10l-466 466q-10 10 -10 23t10 23l50 50q10 10 23 10t23 -10l393 -393l393 393q10 10 23 10t23 -10l50 -50q10 -10 10 -23zM1075 1056q0 -13 -10 -23l-466 -466q-10 -10 -23 -10t-23 10l-466 466q-10 10 -10 23 t10 23l50 50q10 10 23 10t23 -10l393 -393l393 393q10 10 23 10t23 -10l50 -50q10 -10 10 -23z"
+         id="path34406" />
+    </symbol>
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -26,7 +38,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.3953243"
-     inkscape:cx="229.14308"
+     inkscape:cx="223.29836"
      inkscape:cy="130.4527"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -53,10 +65,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-792.36216)">
+     transform="translate(0,-752.36216)">
     <g
        id="w"
-       transform="matrix(0.82522222,0,0,0.82522222,-833.33934,554.34068)"
+       transform="matrix(0.82522222,0,0,0.82522222,-833.33934,508.34068)"
        inkscape:label="#g161220">
       <g
          transform="translate(-0.02798276,0)"
@@ -143,7 +155,7 @@
          style="opacity:1;fill:#2e3436;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
     </g>
     <g
-       transform="matrix(0.59551104,0,0,0.59551104,788.54224,265.2005)"
+       transform="matrix(0.59551104,0,0,0.59551104,788.54224,219.2005)"
        id="ws"
        inkscape:label="#g161250">
       <g
@@ -220,7 +232,8 @@
     </g>
     <g
        id="motto1"
-       inkscape:label="#g62522">
+       inkscape:label="#g62522"
+       transform="translate(0,-46)">
       <path
          d="m 53.18614,977.53677 0,15.52821 3.463713,0 q 3.955187,0 5.792359,-1.87228 1.848874,-1.87228 1.848874,-5.90938 0,-4.01369 -1.848874,-5.88597 -1.837172,-1.86058 -5.792359,-1.86058 l -3.463713,0 z m -1.193577,-0.99464 4.294537,0 q 4.774307,0 7.009339,2.11801 2.235031,2.10631 2.235031,6.59978 0,4.51687 -2.246733,6.63488 -2.246733,2.11802 -6.997637,2.11802 l -4.294537,0 0,-17.47069 z"
          style="font-style:normal;font-variant:normal;font-weight:200;font-stretch:normal;font-size:23.96515274px;line-height:125%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Ultra-Light';text-align:center;letter-spacing:-2.722054px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -349,7 +362,8 @@
     </g>
     <g
        id="motto2"
-       inkscape:label="#g62549">
+       inkscape:label="#g62549"
+       transform="translate(0,-46)">
       <path
          d="m 113.76479,1014.1602 18.07529,0 0,0.8021 -18.07529,0 0,-0.8021 z"
          style="font-style:normal;font-variant:normal;font-weight:200;font-stretch:normal;font-size:20.03149033px;line-height:125%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Ultra-Light';text-align:center;letter-spacing:-2.722054px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -440,6 +454,26 @@
          style="font-style:normal;font-variant:normal;font-weight:200;font-stretch:normal;font-size:20.03149033px;line-height:125%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Ultra-Light';text-align:center;letter-spacing:-2.722054px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          id="path62477"
          inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="scrollSign"
+       inkscape:label="#g64166">
+      <circle
+         r="29.641081"
+         cy="1019.4686"
+         cx="229.14307"
+         id="path64164"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
+      <use
+         inkscape:label="#use64150"
+         style="fill:#d3d7cf"
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         transform="matrix(0.79255652,0,0,0.79255652,206.31744,986.59615)"
+         xlink:href="#angle-double-down"
+         id="64150" />
     </g>
   </g>
 </svg>
