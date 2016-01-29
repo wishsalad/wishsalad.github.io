@@ -61,7 +61,7 @@ function onSVGLoaded( data ){
       w.transform(wt);
       w.addTransform("t150,0");
 
-      w.stop();
+      ws.stop();
       ws.attr({opacity: 0});
       ws.transform(wst);
       ws.addTransform("t50,0");
