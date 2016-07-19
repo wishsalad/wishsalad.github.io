@@ -1,7 +1,7 @@
 window.onload = function() {
 
 var parentSvg = Snap("#svg");
-Snap.load("logo.svg", onSVGLoaded) ;
+Snap.load("img/logo.svg", onSVGLoaded) ;
 
 function onSVGLoaded( data ){
     var svg = Snap(data.select('svg'));
