@@ -1,0 +1,10 @@
+[book]
+authors = ["siriux"]
+language = "en"
+multilingual = false
+src = "."
+title = "WishSalad Book"
+
+[build]
+build-dir = "../../wishsalad.github.io/book"
+create-missing = false
