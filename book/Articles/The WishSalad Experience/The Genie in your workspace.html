@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>WIP The Genie In Your Workspace - WishSalad Book</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../../favicon.png">
+        
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../Introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Articles</li><li class="chapter-item expanded "><a href="../../Articles/The WishSalad Experience.html">The WishSalad Experience</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Articles/The WishSalad Experience/The Technology Gap And WishSalad.html">The Technology Gap And WishSalad</a></li><li class="chapter-item expanded "><a href="../../Articles/The WishSalad Experience/A Medium That Flows.html">WIP A Medium That Flows</a></li><li class="chapter-item expanded "><a href="../../Articles/The WishSalad Experience/The Genie in your workspace.html" class="active">WIP The Genie In Your Workspace</a></li><li class="chapter-item expanded "><div>! Communities high level</div></li><li class="chapter-item expanded "><div>! Real World Examples</div></li><li class="chapter-item expanded "><div>! Advanced Activities</div></li><li class="chapter-item expanded "><div>! Advanced Tools</div></li></ol></li><li class="chapter-item expanded "><div>Guiding Principles</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Articles/Guiding Principles/Not As Crazy As It Seems.html">Not As Crazy As It Seems</a></li></ol></li><li class="chapter-item expanded "><div>Under The Hood</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Articles/Under The Hood/A Recipe For The Universal Salad.html">WIP A Recipe For The Universal Salad</a></li><li class="chapter-item expanded "><div>! Activities low level</div></li><li class="chapter-item expanded "><div>! Communities low level</div></li></ol></li><li class="chapter-item expanded "><li class="part-title">Design</li><li class="chapter-item expanded "><div>User Experience</div></li><li class="chapter-item expanded "><div>Strategy and Tactics</div></li><li class="chapter-item expanded "><div>Implementation</div></li><li class="chapter-item expanded affix "><li class="part-title">Tests</li><li class="chapter-item expanded "><a href="../../Misc/Svg Animation Ideas And Tests.html">Svg Animation</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">WishSalad Book</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="the-genie-in-your-workspace"><a class="header" href="#the-genie-in-your-workspace">The Genie In Your Workspace</a></h1>
+<p>All the concepts described in the previous articles seem pretty interesting, but what is it like to use the WishSalad medium? Let me introduce you to your new workspace and the genie that lives there.</p>
+<p>When working with the WishSalad medium, you do it inside a workspace. It's your interface to the medium, and it contains your activity flows and other features.</p>
+<p>It will probably look very familiar, as it reuses many visual concepts you have already used. For example, it has top and bottom toolbars, like many operating systems and Apps. And a central space for your activities.</p>
+<p>You can divide the central space with different tile layouts or cover it with a single tile. And each tile can display a single activity flow or use tabs when you need to have more. You can also have floating flows similar to windows in the current platforms, but it's better to use this sparingly.</p>
+<p>That's a very flexible way of organizing your activities, and it's mainly possible because you don't have to deal with activities isolated in Apps. It mixes the power of tabs you already enjoy in the browser with the flexibility of tiles and floating flows.</p>
+<p>Now let me show you how to work with a single activity flow. You can create a new one, for example, opening a new tab in a tile. And you are immediately greeted by an activity provided by the WishSalad genie.</p>
+<p>The genie is like your personal assistant in the WishSalad medium. Always there, ready to help your activities flow. Making appear whatever you wish, instantly, no matter where you are. Besides you whenever you need it, in this and many other situations. And sometimes, it even floats like a real genie. How cool is that!</p>
+<p>But let's come back to our example. When you start a new activity flow, the genie greets you with an activity to help you find the story or tool you want to use next.</p>
+<p>First, you will see whatever the genie thinks is more relevant in the current context, like recently used stories, tools, general categories, and more. From there, you can choose something or navigate to something else. But sometimes, it's just better to ask for what you want using the provided search and autocomplete.</p>
+<p>From there on, the genie is always present whenever you want to move to another activity in the flow. And it also supports you in the current activity and anything else you might decide to do.</p>
+<p>In the WishSalad medium, tools try to focus as much as possible on their core task and delegate everything else to what we call support activity flows. And as you guessed, the genie is behind them too.</p>
+<p>For example, a tool doesn't need to provide a way on its interface to give values to all its configuration options. And it will do it only for the essential ones.</p>
+<p>For the others, the genie will float over your current activity showing a support activity flow. This flow can be as simple as a single activity or as complex as you need. </p>
+<p>If you need to configure a date, it will show you a simple calendar activity. But you can indicate to the genie that you want something else, and it will move to a tool similar to the one we use to select the first activity.</p>
+<p>From there, you can search and navigate to a different date selection tool. Or you can find a story that includes the date you want to use as a configuration value, like the deadline of a project or a person's birthday.</p>
+<p>But remember, support flows are just regular activity flows. So you can do anything you need in them. For example, you could call the genie to provide an attachment for a message. </p>
+<p>The first thing you do is to find the picture you want to attach. You navigate to a new activity in the support flow to edit the colors of the photo. And form there, to another one to draw and write on top of it. </p>
+<p>Finally, the result is attached to the message, and you can continue editing the text in the main activity. Simple, powerful, and with minimal effort.</p>
+<p>You can now select and create configuration elements as you go, but sometimes you need to be even more dynamic. Let's see if the genie can help you here too.</p>
+<p>Imagine you are working on a graphic design, and you are defining the size of a rectangle. You might be creating some data visualization, and you determine this value using a support flow that calculates the average height of a collection of people.</p>
+<p>That's useful, and at some level, similar to the example of the photo before. But what happens if the collection of people changes over time? For example, because you want to use the basketball team that is currently first in a league.</p>
+<p>No problem, the genie is there to help you. In a support flow, you have the option to save the value as dynamic.  And the genie will take care of updating it using the same flow if something changes. </p>
+<p>Now you can create dynamic data visualizations!</p>
+<p>You can use support activity flows almost everywhere. And we still have to discover their full potential. But for now, you can get a good idea of how simple and familiar support flows can look most of the time and how powerful they can get when needed.</p>
+<p>We have seen how the genie helps you find what to use to start a new activity flow. And how convenient support flows are inside an activity. But what about progressing from one activity to the next in a flow?</p>
+<p>The genie can help you to navigate the flow implicitly and explicitly. Let's see how.</p>
+<hr />
+<p>This is going to be long, try to be as concise as possible from the beginning. Create texts inside the experience design as needed for the details (leave a sketch of the ideas there) and reference it when needed.</p>
+<p>Workspace</p>
+<ul>
+<li>Mainly a set of activity flows, with other things to support them</li>
+<li>Top bar
+<ul>
+<li>Workspace Genie</li>
+<li>Widgets
+<ul>
+<li>Are micro activities (display,buttons, ...)</li>
+<li>Managed by the workspace, current activity, and current selection</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bottom bar
+<ul>
+<li>More widgets, in general more general things like background tasks, notifications, system info, launchers, minimized activity flows, ...</li>
+</ul>
+</li>
+<li>Sidebars (optional)</li>
+<li>Tiles
+<ul>
+<li>Can include tabs</li>
+<li>Various layouts (1, 2, 3, 4)</li>
+</ul>
+</li>
+<li>Floating activities</li>
+<li>Perspectives
+<ul>
+<li>An specific arrangement of the tiles, visible activity flows, and other configurable options in a workspace</li>
+<li>They let you quickly change perspective within a single workspace</li>
+</ul>
+</li>
+<li>Activity flows (sometimes simply called flows, others just activity)
+<ul>
+<li>In tiles, tabs, floating, minimized, hidden, …</li>
+<li>In special situations can be shared between workspaces, and even with other users. This is deeper than real time collaboration in a story. Which doesn't share the activity and maybe even the tool, only the story and can be only specific elements of the other activity state, like the cursor.</li>
+</ul>
+</li>
+<li>Pads
+<ul>
+<li>A collection of (hierarchical) names associated with the results of activity flows. They are visualized like a pad.</li>
+<li>Sometimes called helper pads, scratch pads and work pads, in other situations.</li>
+<li>Special pads
+<ul>
+<li>They have custom graphical and keyboard interface for quick use and access, and they can be created dynamically </li>
+<li>Extended clipboard </li>
+<li>Favorites</li>
+<li>Recent, frequently used, … (dynamic)</li>
+</ul>
+</li>
+<li>User pads</li>
+</ul>
+</li>
+<li>Notes (like any other story)</li>
+<li>Workspace manager
+<ul>
+<li>Internal configuration options (layout, all activities, perspectives ...)</li>
+<li>Other workspaces, move things between them</li>
+<li>Workspace timeline
+<ul>
+<li>Powerful undo/redo</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Activities, flows, and the genie</p>
+<ul>
+<li>TODO Special ways of working in WishSalad</li>
+<li>The Genie is associated with all the support around the flows, support activities (search a tool or an element, navigate, … dynamically update, ...) and flows. 
+<ul>
+<li>Usually performed in a floating region, like a floating genie. We call them floating activities and flows.
+<ul>
+<li>There are implicit floating support activities, like tools that float around a text selection, or when you select an element in a collection, floating menus on hover, …</li>
+<li>Nested floating support flows are usually displayed in a special view similar to a stack, with the nested flow shown below.</li>
+</ul>
+</li>
+<li>Also called helper/sub activities and flows.</li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../Articles/The WishSalad Experience/A Medium That Flows.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../Articles/Guiding Principles/Not As Crazy As It Seems.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../Articles/The WishSalad Experience/A Medium That Flows.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../Articles/Guiding Principles/Not As Crazy As It Seems.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
